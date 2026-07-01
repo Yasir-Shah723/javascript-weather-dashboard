@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Prism</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero glass-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Weather Dashboard</p>
+        <h1>Weather Prism</h1>
+        <p>Search any city to reveal real-time weather with a polished glassmorphism experience.</p>
+      </div>
+      <div class="search-panel">
+        <form id="search-form" class="search-form">
+          <label for="city-input" class="sr-only">City name</label>
+          <input id="city-input" type="text" placeholder="Enter city name, e.g. Islamabad" autocomplete="off" required />
+          <button type="submit">Search</button>
+        </form>
+        <div class="status-bar">
+          <span id="date-time">Loading date...</span>
+          <span id="status-text"></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="weather-card glass-panel hidden" id="weather-card">
+        <div class="card-top">
+          <div>
+            <p class="label">City</p>
+            <h2 id="city-name">Islamabad</h2>
+            <p id="weather-desc" class="description">Clear skies with bright sunshine</p>
+          </div>
+          <div class="weather-icon" id="weather-icon" aria-hidden="true">☀️</div>
+        </div>
+
+        <div class="card-grid">
+          <div class="stat">
+            <p class="label">Temperature</p>
+            <p class="value" id="temperature">30°C</p>
+          </div>
+          <div class="stat">
+            <p class="label">Humidity</p>
+            <p class="value" id="humidity">40%</p>
+          </div>
+          <div class="stat">
+            <p class="label">Condition</p>
+            <p class="value" id="condition">Sunny</p>
+          </div>
+          <div class="stat">
+            <p class="label">Feels Like</p>
+            <p class="value" id="feels-like">29°C</p>
+          </div>
+        </div>
+        <p class="note" id="footer-note">Live weather powered by OpenWeather.</p>
+      </section>
+
+      <div class="loading glass-panel hidden" id="loading-state">
+        <div class="spinner"></div>
+        <p>Fetching weather...</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>Weather Prism • Built with HTML, CSS, and Vanilla JavaScript • Replace <strong>YOUR_API_KEY_HERE</strong> in <code>script.js</code> with your OpenWeather API key.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
